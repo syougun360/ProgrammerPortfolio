@@ -1,0 +1,25 @@
+#Nav-Header {
+  color: #FFFFFF;
+  height: 60px;
+  padding-top: 30px;
+}
+
+#nav_list {
+  padding-left: 30px;
+}
+#category{
+  height: 65px;  
+}
+
+.jumbotron {
+  padding-bottom: 10px;
+}
+
+#playVideo{
+  width: 550px;
+  height: 350px;
+}
+
+#game-container{
+  padding-right: 100px;
+}
