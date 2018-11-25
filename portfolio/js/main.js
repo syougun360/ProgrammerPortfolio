@@ -1,8 +1,11 @@
 window.onload = function() {
+};
+
+$(document).ready(function($) {
 	DrawMyProfile();
 	DrawContents();
 	DrawSkillSheet();
-};
+});
 
 // プロフィール
 function DrawMyProfile(){
