@@ -1,8 +1,8 @@
-jQuery(document).ready(function($) {
+window.onload = function() {
 	DrawMyProfile();
 	DrawContents();
 	DrawSkillSheet();
-});
+};
 
 // プロフィール
 function DrawMyProfile(){
