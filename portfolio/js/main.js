@@ -1,4 +1,5 @@
 window.onload = function() {
+	SetupHeaderScroll();
 	DrawMyProfile();
 	DrawContents();
 	DrawSkillSheet();
@@ -225,4 +226,29 @@ function DrawSkill(nameText,categoryText,userTimeText,otherText){
 	tBody.append(tr);
 
 	skillSheetTable.append(tBody);
+}
+
+function SetupHeaderScroll(){
+	$('a[href^=#]').click(function() {
+	  var speed = 400;
+	  var href= $(this).attr("href");
+	  var target = $(href == "#" || href == "" ? 'html' : href);
+	  var position = target.offset().top - 80;
+	  $('body,html').animate({scrollTop:position}, speed, 'swing');
+	  return false;
+	});
+}
+
+function navLinkClick(button){
+  var navItems  = document.getElementById("nav_list").children;
+  var activeItem = null;
+  for(var i = 0;i<navItems.length;i++){
+    if(navItems[i].className == "nav-item nav-link active"){
+      activeItem = navItems[i];
+    }
+  }
+
+  activeItem.className = "nav-item nav-link";
+  button.className = "nav-item nav-link active";
+  return false;
 }

@@ -9,44 +9,10 @@
     <link rel="stylesheet" type="text/css" href="./css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
     <script type="text/javascript" src="./js/bootstrap/bootstrap.min.js"></script>
-
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
 
-    <script>
-      $(function(){
-        // #で始まるアンカーをクリックした場合に処理
-        $('a[href^=#]').click(function() {
-          // スクロールの速度
-          var speed = 400; // ミリ秒
-          // アンカーの値取得
-          var href= $(this).attr("href");
-          // 移動先を取得
-          var target = $(href == "#" || href == "" ? 'html' : href);
-          // 移動先を数値で取得
-          var position = target.offset().top - 80;
-          // スムーススクロール
-          $('body,html').animate({scrollTop:position}, speed, 'swing');
-          return false;
-        });
-      });
-
-      function navLinkClick(button){
-          var navItems  = document.getElementById("nav_list").children;
-          var activeItem = null;
-          for(var i = 0;i<navItems.length;i++){
-            if(navItems[i].className == "nav-item nav-link active"){
-              activeItem = navItems[i];
-            }
-          }
-
-          activeItem.className = "nav-item nav-link";
-          button.className = "nav-item nav-link active";
-          return false;
-      }
-
-    </script>
     <title>ポートフォリオ</title>
 
   </head>
