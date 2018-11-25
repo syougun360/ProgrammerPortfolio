@@ -9,57 +9,33 @@
     <link rel="stylesheet" type="text/css" href="./css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/bootstrap/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="./js/main.js"></script>
-
-    <script>
-      $(function(){
-        // #で始まるアンカーをクリックした場合に処理
-        $('a[href^=#]').click(function() {
-          // スクロールの速度
-          var speed = 400; // ミリ秒
-          // アンカーの値取得
-          var href= $(this).attr("href");
-          // 移動先を取得
-          var target = $(href == "#" || href == "" ? 'html' : href);
-          // 移動先を数値で取得
-          var position = target.offset().top - 80;
-          // スムーススクロール
-          $('body,html').animate({scrollTop:position}, speed, 'swing');
-          return false;
-        });
-      });
-
-      function navLinkClick(button){
-          var navItems  = document.getElementById("nav_list").children;
-          var activeItem = null;
-          for(var i = 0;i<navItems.length;i++){
-            if(navItems[i].className == "nav-item nav-link active"){
-              activeItem = navItems[i];
-            }
-          }
-
-          activeItem.className = "nav-item nav-link";
-          button.className = "nav-item nav-link active";
-          return false;
-      }
-
-    </script>
     <title>ポートフォリオ</title>
 
   </head>
   <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="Nav-Header">
-      <h4>ポートフォリオ</h4>
-      <div class="navbar-nav" id="nav_list">
-        <a class="nav-item nav-link active" href="#top" onclick="navLinkClick(this)">自己紹介</a>
-        <a class="nav-item nav-link" href="#game" onclick="navLinkClick(this)">作品紹介</a>
-        <a class="nav-item nav-link" href="#program" onclick="navLinkClick(this)">スキルシート</a>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="Nav-Header">
+      <a class="navbar-brand" href="#"><b>ポートフォリオ</b></a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto" id="nav_list">
+          <li class="nav-item active">
+            <a class="nav-link" href="#top" onclick="navLinkClick(this)">自己PR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#game" onclick="navLinkClick(this)">作品紹介</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#program" onclick="navLinkClick(this)">スキルシート</a>
+          </li>
+        </ul>
       </div>
     </nav>
 
+    <br>
     <div id="top" class="jumbotron mt-4">
       <div class="container">
         <h1 class="display-4" id="Name"></h1>
@@ -76,8 +52,7 @@
         </div>
 
       </div>
-    </div>
-    <br><br><br><br>
+      <br><br><br><br>
 
       <div id="program" >
         <div class="alert alert-primary" role="alert" id="category">
@@ -101,6 +76,12 @@
         </div>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 
   </body>
 </html>

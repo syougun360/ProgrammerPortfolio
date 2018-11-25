@@ -226,3 +226,24 @@ function DrawSkill(nameText,categoryText,userTimeText,otherText){
 
 	skillSheetTable.append(tBody);
 }
+
+function navLinkClick(button){
+  var navItems  = document.getElementById("nav_list").children;
+  var activeItem = null;
+  for(var i = 0;i<navItems.length;i++){
+    if(navItems[i].className == "nav-item active"){
+      activeItem = navItems[i];
+    }
+  }
+
+  activeItem.className = "nav-item";
+  button.parentNode.className = "nav-item active";
+
+  var speed = 400;
+  var href= button.getAttribute("href");
+  var target = $(href == "#" || href == "" ? "html" : href);
+  var position = target.offset().top - 80;
+  $("body,html").animate({scrollTop:position}, speed, "swing");
+
+  return false;
+}
